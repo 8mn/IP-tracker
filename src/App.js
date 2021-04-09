@@ -14,6 +14,9 @@ function App() {
                 </div>
             </div>
           </div>
+          <div className={classes.map}>
+            Map
+          </div>
           <div className={classes.infoBox}>
             <div className={classes.infoContainer}>
               <div className={classes.infoChild}>
@@ -33,9 +36,6 @@ function App() {
                 <span className={classes.infoData}>SpaceX Starlink</span>
               </div>
             </div>
-          </div>
-          <div className={classes.map}>
-            Map
           </div>
       </div>
     </div>

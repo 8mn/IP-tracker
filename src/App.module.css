@@ -20,7 +20,7 @@ body{
 }
 
 .container{
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -43,9 +43,11 @@ body{
 .map{
   border: 2px solid black;
   height: 60vh;
-  position: relative;
+  /* position: relative; */
   bottom: 0;
-  background-color: rosybrown;
+  background-color: coral;
+  position: absolute;
+  width: 100vw;
 }
 
 .searchBox{
@@ -78,13 +80,19 @@ img{
   align-items: center;
 }
 
+
+
+
 .infoBox{
   display: flex;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   z-index: 99;
-  width: 100rem;
+  width: 45%;
   border-radius: 15px;
   margin: auto;
+  position: relative;
+  background-color: white;
+  bottom: 10rem;
 }
 
 .infoChild{
@@ -117,4 +125,5 @@ img{
   padding: 4rem;
   justify-content: space-around;
   width: 120rem;
+  /* width: 90%; */
 }
