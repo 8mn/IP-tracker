@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*::after{
+  box-sizing:inherit;
+}
+
+html{
+  box-sizing:border-box;
+  font-size:62.5%;
+}
+
+
+body{
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundImg{
+  height: 40vh;
+  background-image: url('../src/assests/images/pattern-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.Heading{
+  text-align: center;
+  margin-top: 2rem;
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+.map{
+  border: 2px solid black;
+  height: 60vh;
+  position: relative;
+  bottom: 0;
+  background-color: rosybrown;
+}
+
+.searchBox{
+  margin: auto;
+  text-align: center;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+input{
+  padding: 2rem;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  width: 50rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+}
+img{
+  width: 2rem;
+  height: 2rem;
+}
+
+.arrowContainer{
+  background-color: black;
+  border-radius: 0 15px 15px 0;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoBox{
+  display: flex;
+  border: 2px solid red;
+  z-index: 99;
+  width: 100rem;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.infoChild{
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid grey;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  /* padding: 2rem; */
+}
+
+.infoHead{
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  color: grey;
+}
+
+.infoData{
+  font-size: 3rem;
+}
+
+
+.infoChild:first-child{
+  border-left: none;
+}
+
+
+.infoContainer{
+  display: flex;
+  padding: 4rem;
+  justify-content: space-around;
+  width: 120rem;
+}
