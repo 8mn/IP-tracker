@@ -45,9 +45,11 @@ body{
   height: 60vh;
   /* position: relative; */
   bottom: 0;
-  background-color: coral;
+  /* background-color: coral; */
   position: absolute;
   width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .searchBox{
@@ -87,7 +89,9 @@ img{
   display: flex;
   /* border: 2px solid red; */
   z-index: 99;
-  width: 45%;
+  /* width: 45%; */
+  /* width: min-content; */
+  width: fit-content;
   border-radius: 15px;
   margin: auto;
   position: relative;
@@ -126,4 +130,15 @@ img{
   justify-content: space-around;
   width: 120rem;
   /* width: 90%; */
+}
+
+.arrowContainer:hover{
+  background-color: darkmagenta;
+}
+
+.mapid{
+  height: 60vh;
+  z-index: 60;
+  width: 100vw;
+  
 }
