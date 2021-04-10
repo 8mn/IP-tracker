@@ -3,7 +3,7 @@ import arrow from '../src/assests/images/icon-arrow.svg'
 import axios from 'axios';
 import {useEffect, useState} from 'react'
 import isValidDomain from 'is-valid-domain'
-import {Map, MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import {MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import './index.css'
 import L from 'leaflet'
 
@@ -18,12 +18,18 @@ function App() {
   const [isp, setisp] = useState()
   const [query, setquery] = useState('')
   const [queryDomain, setqueryDomain] = useState('')
-  const [latitude, setlatitude] = useState(53.7)
-  const [longitude, setlongitude] = useState(-19)
+  // const [latitude, setlatitude] = useState(53.7)
+  // const [longitude, setlongitude] = useState(-19)
 
 
-  const[pos, setpos] =useState([35,55])
+  const[pos, setpos] =useState([53,-19])
   const[map, setmap] = useState(null)
+
+
+//   const changePos  = (pos) => {
+//     setpos(pos);
+//     if (map) map.flyTo(pos);
+//  }
 
 
   const GetIp = (url) => {
@@ -36,18 +42,19 @@ function App() {
     // url += `&ipAddress=${query}`
     axios.get(`${url}&ipAddress=${query}&domain=${queryDomain}`)
     .then(res => {
-      console.log(res)
+      // console.log(res)
       setipAddress(res.data.ip)
       setlocation(res.data.location.city)
       settimezone(res.data.location.timezone)
       setisp(res.data.isp)
 
-      setlatitude(res.data.location.lat)
-      setlongitude(res.data.location.lng)
-      //res.data.location.lat
-      //res.data.location.ng
-      console.log(latitude,longitude)
-      changePos([res.data.location.lat,res.data.location.lng])
+
+      // setlatitude(res.data.location.lat)
+      // setlongitude(res.data.location.lng)
+        // console.log(latitude,longitude)
+        changePos([res.data.location.lat,res.data.location.lng])
+
+
     })
     .catch(err => alert(err))
   }
@@ -55,7 +62,10 @@ function App() {
   //`${BASE_URL}${API_KEY}`
 
 
-  useEffect(() => GetIp(BASE_URL),[])
+  useEffect(() => {
+    GetIp(BASE_URL)
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[map])
 
   const getQuery = (e) => {
     e.preventDefault()
@@ -70,24 +80,12 @@ function App() {
   })
 
 
-  // const loca = [18.59921,73.92701]
-
-  
-
-  // const defaultCenter = [18.59921,73.92701]
-
-  
-  // const handleflyTo = () => {
-
-  //   map.flyTo([latitude,longitude],12,{
-  //     animate:true,
-  //     duration:2
-  //   })
 
   const changePos  = (pos) => {
     setpos(pos);
-    if (map) map.flyTo(pos);
- }
+    if (map) {
+      map.flyTo(pos)}
+  }
 
   
 
@@ -104,7 +102,7 @@ function App() {
             </div>
           </div>
           <div className={classes.map} >
-          <MapContainer  center={pos} zoom={13} scrollWheelZoom={true} className={classes.mapid} whenCreated={map => setmap(map)}>
+          <MapContainer  center={pos} zoom={13} scrollWheelZoom={true} className={classes.mapid} whenCreated={map => {setmap(map)}}>
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
