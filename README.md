@@ -142,7 +142,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Manish Basargekar - [@oimanish](https://twitter.com/oimanish) - hey@mnsh.me
+Manish Basargekar - [@oimanish](https://twitter.com/oimanish) - hello@mnsh.me
 
 Project Link: [https://github.com/8mn/IP-tracker](https://github.com/8mn/IP-tracker)
 
