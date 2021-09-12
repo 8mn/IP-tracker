@@ -56,10 +56,9 @@ function App() {
 
 
     })
-    .catch(err => alert(err))
+    .catch(err => alert(`${err}- Try disabling your adBlocker`))
   }
 
-  //`${BASE_URL}${API_KEY}`
 
 
   useEffect(() => {
