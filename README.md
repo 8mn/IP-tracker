@@ -146,3 +146,6 @@ Manish Basargekar - [@oimanish](https://twitter.com/oimanish) - hey@mnsh.me
 
 Project Link: [https://github.com/8mn/IP-tracker](https://github.com/8mn/IP-tracker)
 
+##TODO
+- Make the site mobile responsive
+- Fix adblock error
